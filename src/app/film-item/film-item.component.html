@@ -1,0 +1,9 @@
+
+        <div class="card" >     
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{film.imageUrl}}" alt={{film?.title}}/>
+                <div class="card-body">
+                        <h3 class="card-title">{{film.title}}</h3>
+                        <p class="card-text">{{film.year}}</p>
+                        <a [routerLink]="['/details',film.id]"><button class="btn btn-primary"> More </button></a>
+                </div>
+        </div>
