@@ -1,1 +1,15 @@
-<p>list-commantaire works!</p>
+<div class="border rounded">
+    <div>Comments</div>
+    <input type="text" placeholder="write a comment" [(ngModel)]="comment" />
+    <button type="submit" (click)="setValue(comment)" class="btn btn-primary">comment</button>
+    <div>
+    <div>
+        
+        <div *ngFor="let c of comments" class="border rounded">
+            <h6> Oudourouch youssef</h6>
+            <span>{{c}}</span>
+        </div>
+    </div>
+
+</div>
+</div>

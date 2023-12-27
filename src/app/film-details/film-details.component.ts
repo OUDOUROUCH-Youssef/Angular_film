@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { film } from '../modul/movie';
 import { ActivatedRoute } from '@angular/router';
 import { FilmService } from '../filmServices/service';
+import { ListCommantaireComponent } from '../list-commantaire/list-commantaire.component';
 
 @Component({
   selector: 'app-film-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ListCommantaireComponent],
   templateUrl: './film-details.component.html',
   styleUrl: './film-details.component.css'
 })

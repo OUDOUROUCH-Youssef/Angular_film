@@ -17,7 +17,6 @@ export class FilmItemComponent {
 [x: string]: any;
   constructor(private router: Router){}
   @Input() film !:any;
-
   @Output() change : EventEmitter<string> = new EventEmitter();
 
 

@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './commantaire.component.css'
 })
 export class CommantaireComponent {
-
+  
 }
