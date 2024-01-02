@@ -1,6 +1,7 @@
+<app-search (change)="onchange($event)" [currentUser]="currentUser"></app-search>
 <div class="row">
-    <app-search (change)="onchange($event)"></app-search>
+    
     <div class="col-md-3" *ngFor="let film of filmSearch">
-        <app-film-item [film]="film"></app-film-item>
+        <app-film-item [film]="film" [currentUser]="currentUser"></app-film-item>
     </div>
 </div>

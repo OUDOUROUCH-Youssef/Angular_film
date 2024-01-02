@@ -1,0 +1,22 @@
+.details{
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 12px;
+    margin-top: 1%;
+}
+.comments{
+    background-color: white;
+    opacity:0.8;
+    width: 90%;
+    border-radius: 12px;
+    padding-left: 2%;
+    margin-top: 2%;
+    padding-bottom:1%;
+}
+.detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

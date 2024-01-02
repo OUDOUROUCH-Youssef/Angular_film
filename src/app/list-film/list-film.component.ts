@@ -1,12 +1,12 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FilmItemComponent} from '../film-item/film-item.component';
 import {FilmService} from '../filmServices/service';
 import { film } from '../modul/movie';
-import { Router } from 'express';
 import { ActivatedRoute } from '@angular/router';
 import { SearchComponent } from '../search/search.component';
+import { User } from '../modul/client';
 
 
 
@@ -20,11 +20,12 @@ import { SearchComponent } from '../search/search.component';
 })
 
 export class ListFilmComponent implements OnInit{
+  currentUser!: User;
   films : film[] =[];
   filmSearch : film[] =[];
 
   serched!:String
-  constructor(private filmService: FilmService){
+  constructor(private filmService: FilmService, private route:ActivatedRoute){
 
   }
   handleClick($event: string) {
@@ -33,25 +34,11 @@ export class ListFilmComponent implements OnInit{
 
   ngOnInit() {
     this.filmService.getMovies().subscribe((data: any) => {
-      this.films = data.results.map(
-        (film:any) => ({
-          id: film.id,
-          title: film.title,
-          year: film.release_date,
-          description: film.overview,
-          imageUrl: film.poster_path
-        })
-      )
-      this.filmSearch = data.results.map(
-        (film:any) => ({
-          id: film.id,
-          title: film.title,
-          year: film.release_date,
-          description: film.overview,
-          imageUrl: film.poster_path
-        })
-      )
-    })
+      this.films = data.results
+      this.filmSearch = data.results})
+      this.route.paramMap.subscribe(()=> {
+        this.currentUser=history.state.user
+      })
   }
 onchange(serchedTerm:String){
   this.serched=serchedTerm;

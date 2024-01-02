@@ -1,9 +1,15 @@
 
-        <div class="card" >     
-                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{film.imageUrl}}" alt={{film?.title}}/>
+        <div class="card moviee">     
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{film.poster_path}}" alt={{film.title}}/>
                 <div class="card-body">
                         <h6 class="card-title">{{film.title}}</h6>
-                        <p class="card-text">{{film.year}}</p>
-                        <a [routerLink]="['/details',film.id]"><button class="btn btn-primary"> More </button></a>
+                        <p class="card-text">{{film.release_date}}</p>
+                        <div calss="row">
+                                <button class="btn btn-primary col-6" (click)="showDetails(film.id)"> More </button>
+                                <a class="heart col-6" (click)="toggleColor(film.id)">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" class="icon" [style.fill]="iconColor">
+                                        <path d="M16.5 3C19.5376 3 22 5.5 22 9C22 16 14.5 20 12 21.5C9.5 20 2 16 2 9C2 5.5 4.5 3 7.5 3C9.35997 3 11 4 12 5C13 4 14.64 3 16.5 3Z" fill="iconColor"></path>
+                                </svg></a>
+                        </div>
                 </div>
         </div>

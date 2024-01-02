@@ -1,0 +1,26 @@
+.wrap{
+    background-color: rgb(118, 154, 246);
+    display: flex;
+    justify-content: center;
+}
+.searchTerm{
+    border-radius: 8px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 50%;
+    border: none;
+}
+.icon{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    color: red;
+}
+.Title{
+    color: white;
+}
+.user{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+}

@@ -4,6 +4,7 @@ import { film } from '../modul/movie';
 import { ActivatedRoute } from '@angular/router';
 import { FilmService } from '../filmServices/service';
 import { ListCommantaireComponent } from '../list-commantaire/list-commantaire.component';
+import { User } from '../modul/client';
 
 @Component({
   selector: 'app-film-details',
@@ -14,24 +15,28 @@ import { ListCommantaireComponent } from '../list-commantaire/list-commantaire.c
 })
 export class FilmDetailsComponent implements OnInit{
    
-  movie: any;
+  movie !: film;
   movieId: number | undefined;
+  currentUser!:User;
+
 
   constructor(private router : ActivatedRoute, private filmService : FilmService) {
   }
 
   ngOnInit(): void {
-    // Get the ID from the URL
-    const movieId = this.router.snapshot.params['id']
-    // Use the ID to fetch the movie details
-    this.getMovieById(movieId);
-    
+    this.router.paramMap.subscribe(()=> {
+      this.currentUser=history.state.user
+      this.movieId=history.state.id_movie
+    })
+    this.getMovieById(this.movieId);
+    console.log(this.currentUser)
+
   }
 
 
   private getMovieById(movieId: any) {
     this.filmService.getMovieById(movieId).subscribe(
-      (response: any): void =>{
+      (response: film): void =>{
         this.movie = response;
       }
     );
@@ -42,8 +47,7 @@ export class FilmDetailsComponent implements OnInit{
   }
 
   getStarRating(voteAverage: number): string {
-    // Implement logic to convert vote average to star rating format
-    const rating = Math.round(voteAverage / 2); // Assuming a 10-point scale
+    const rating = Math.round(voteAverage / 2);
     return '⭐'.repeat(rating);
   }
 

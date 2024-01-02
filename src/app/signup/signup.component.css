@@ -1,0 +1,120 @@
+
+.pere{
+    height: 100vh;
+}
+.form_container h2 {
+    font-size: 22px;
+    color: black;
+    text-align: center;
+  }
+  
+  .input_box {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+  }
+  
+  .input_box input {
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    background-color: aliceblue;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid black;
+  }
+  
+  .input_box input:focus {
+    border-color: rgb(25, 79, 180);
+  }
+  
+  .input_box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+  }
+  
+  
+  .input_box input:focus ~ i.email,
+  .input_box input:focus ~ i.password {
+    color: rgb(25, 79, 180);
+  }
+  
+  .input_box i.pw_hide {
+    right: 0;
+    font-size: 18px;
+  }
+  
+  .option_field {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .form_container a {
+    color: rgb(25, 79, 180);
+    font-size: 12px;
+  }
+  
+  .form_container a:hover {
+    text-decoration: underline;
+  }
+  
+  .checkbox {
+    display: flex;
+    column-gap: 8px;
+    white-space: nowrap;
+  }
+  
+  .checkbox input {
+    accent-color: rgb(25, 79, 180);
+  }
+  
+  .checkbox label {
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: #0b0217;
+  }
+  
+  .login_form .button {
+    background: rgb(25, 79, 180);
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+  
+  .login_signup {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .error_message {
+    font-size: 12px;
+    margin-left: 120px;
+  }
+  
+  
+  .login_form{
+    position: absolute;
+    max-width: 320px;
+    margin-top: 4%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background: aliceblue;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+    transform: all 0.4s ease-out;
+  }

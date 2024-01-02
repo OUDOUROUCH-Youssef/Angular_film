@@ -1,15 +1,16 @@
-<div class="border rounded">
+<div>
     <div>Comments</div>
     <input type="text" placeholder="write a comment" [(ngModel)]="comment" />
-    <button type="submit" (click)="setValue(comment)" class="btn btn-primary">comment</button>
-    <div>
-    <div>
+    <input type="submit" value="comment" (click)="setValue(comment)" class="btn btn-primary">
+   
         
-        <div *ngFor="let c of comments" class="border rounded">
-            <h6> Oudourouch youssef</h6>
-            <span>{{c}}</span>
+    <div *ngFor="let c of comments|async">
+        <div *ngIf="c" class="row comment">
+            <h6 class="col-3">{{c.userName}}</h6>
+            <span class="date col-5">{{c.createdAT}}</span>
         </div>
+        <span>{{c.caption}}</span>
     </div>
+    
 
-</div>
 </div>
