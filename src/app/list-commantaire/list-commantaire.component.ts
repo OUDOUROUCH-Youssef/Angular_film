@@ -25,7 +25,9 @@ export class ListCommantaireComponent implements OnInit{
   setValue(comment1: string) {
     if(comment1.length>0){
       this.favoriteService.postComment({id_film:this.id_film,id_user:this.currentUser.id, caption:comment1,createdAT:this.getCurrentDate(),userName:this.currentUser.userName} as Commantaire).subscribe()
+      this.comments=this.favoriteService.getComment(this.id_film);
     }
+    
   }
   getCurrentDate(): string {
     const currentDate = new Date();

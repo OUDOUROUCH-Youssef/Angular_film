@@ -1,7 +1,7 @@
 <div>
-    <div>Comments</div>
-    <input type="text" placeholder="write a comment" [(ngModel)]="comment" />
-    <input type="submit" value="comment" (click)="setValue(comment)" class="btn btn-primary">
+    <h6>Comments</h6>
+    <input type="text" placeholder="write a comment" class="col-3 border rounded" [(ngModel)]="comment" />
+    <input type="submit" value="comment" (click)="setValue(comment)" class="mx-4 btn btn-primary">
    
         
     <div *ngFor="let c of comments|async">
